@@ -1,0 +1,10 @@
+{
+	"env": {
+		"commonjs": true,
+		"es2020": true,
+		"browser": true
+	},
+	"rules": {
+		"no-restricted-globals": "off"
+	}
+}

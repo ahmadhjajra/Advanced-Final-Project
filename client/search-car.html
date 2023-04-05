@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/search-car.css">
+    <title>Rents</title>
+
+    <script type="text/javascript" src="/public/js/search-car.js"></script>
+  
+</head>
+
+
+<body>
+    <!--Start Upper Bar-->
+    <div class="upper-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <i class="fa fa-envelope-o"></i> Rents@support.com
+                </div>
+                <div class="col-md">
+                    Lets Work Together <span class="Get-Quote"> Get Quote </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Upper Bar-->
+
+    <!--Start Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand"><span>R</span><span>ents</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+                    </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    עוד
+                                </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" target="_self" href="#">מי אנחנו </a>
+                            <a class="dropdown-item" target="_self" href="/contact-us">ליצור קשר <i class="fa fa-phone fa-1x" ></i></a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    התחברות <i class="fa fa-sign-in fa-1x"></i>
+                                </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" target="_self" href="/login">התחבר <i class="fa fa-sign-in fa-1x"></i></a>
+                            <a class="dropdown-item" target="_self" href="/register">להירשם <i class="fa fa-registered fa-1x"></i></a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    מכירה וקנייה  <i class="fa fa-car fa-1x"></i>
+                                </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" target="_self" href="#">מכירת רכב</a>
+                            <a class="dropdown-item" target="_self" href="#">קניית רכב</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    השכרה  <i class="fa fa-search fa-1x"></i>
+                                </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" target="_self" href="#">הוספת רכב להשכרה</a>
+                            <a class="dropdown-item" target="_self" href="#">חיפוש רכב להשכרה</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" target="_self" href="/home">דף הבית <span class="sr-only">(current)</span><i class="fa fa-home fa-1x"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    חשבון שלי
+                                </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" target="_self" href="#">הזמנות שלי</a>
+                            <a class="dropdown-item" target="_self" href="#">דף בקשות</a>
+                            <a class="dropdown-item" target="_self" href="/logout">התנתק <i class="fa fa-sign-out fa-1x" ></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--End Navbar-->
+
+
+<div class="info-container" id="infoC" style="height: 100px;">
+    <p class="car-list-label2" >בחר סוג חיפוש</p>
+    <select class="car-list" onchange="getSelect()" id="cars">
+         <option selected disabled>בחר סוג חיפוש</option>
+         <option value="Buy">קניית רכב</option>
+         <option value="Lease">השכרת רכב</option>
+     </select>
+            <div class="inner-div-buy" id="inner-buy">
+                <input type="text" id="carModel" placeholder="Car model" style="display: none; width: 200px;"> 
+            </div>
+            <div class="inner-div-lease" id="inner-lease">
+                <div class="row">
+                    <div class="col-md">
+                        <p class="car-list-label2"  > - מחיר החל מ</p>
+                        <input type="text"  name="currency-field" id="fromPrice" value="" data-type="currency" placeholder="₪">
+            
+                        <p class="car-list-label2" > - מחיר עד</p>
+                        <input type="text" name="currency-field" id="toPrice"  value="" data-type="currency" placeholder="₪">      
+                
+                    </div>
+                    <div class="col-md">
+                        <p class="car-list-label2" > - תאריך החל מ</p>
+                        <input type="date" name="currency-field" id="fromDate" value=""  >
+            
+                        <p class="car-list-label2" > - תאריך עד</p>
+                        <input type="date" name="currency-field" id="toDate"  value="" >
+        
+                    </div>
+                    <div class="col-md">
+                        <button onclick="show()" class="inner-div-button" >Show</button>
+                    </div>
+                </div>
+            </div>
+
+ </div>
+
+    
+    <div class="my-container">
+
+        <!-- Div for append (SALE CARS) -->
+    <div id="sale_cars_div">       
+
+    </div>
+<!-- -->
+<!-- only one of this two divs will be appended.-->
+<!-- Div for append (LEASE CARS) -->
+    <div id="lease_cars_div">       
+
+    </div>
+<!-- -->
+    </div>
+
+
+
+
+
+<!-- Modal -->
+<div id="DealModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="float: left;">Deal information</h4>
+      </div>
+      <div class="modal-body">
+        <p>Price per day</p>
+        <p style="color: darkcyan;" id="Price-div"></p>
+        <hr>
+        <p>Model</p>
+        <p style="color: darkcyan;" id="Model-div"></p>
+        <hr>
+        <p>Year</p>
+        <p style="color: darkcyan;" id="Year-div"></p>
+        <hr>
+        <p>Gearbox</p>
+        <p style="color: darkcyan;" id="Gearbox-div"></p>
+        <hr>
+        <p>Color</p>
+        <p style="color: darkcyan;" id="Color-div"></p>
+        <hr>
+        <p>Seats</p>
+        <p style="color: darkcyan;" id="Seats-div"></p>
+        <hr>
+        <p>Bags</p>
+        <p style="color: darkcyan;" id="Bags-div"></p>
+        <hr>
+        <p>Avilable</p>
+        <p style="color: darkcyan;" id="Available-div"></p>
+        <hr>
+        <div style="width: 100%; text-align: center;">
+            <p id="order-msg">You can order by sending a request for the car owner and by the time he accepts that you can enjoy your car!</p>
+            <button onclick="order();" class="inner-div-button2">Order</button>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="doneDeal();" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--END OF EVERY PAGE-->
+    <div style="background: #08526d;; width: 100%; height: 600px; ">
+
+        <div class="container ">
+            <br><br><br>
+            <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: large; font-weight: bold; color: white; float: right; ">
+                אל תפספס עדכונים ומבצעים
+            </h3><br><br>
+            <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: medium; color: cornsilk; float: right; ">
+                השתתף במייל וקבל כל המבצעים וההנחות העדכניים בזמן
+            </h3>
+            <div class="input-group mb-3 " style="float: left; width: 72%; ">
+                <div class="input-group-prepend ">
+                    <button class="btn btn-outline-primary " style="color: tomato; border-color: lightgray; " onclick="subscribe() " type="button ">Subscribe</button>
+                </div>
+                <input type="text " class="form-control " id="label " placeholder="Email Address ">
+            </div><br><br>
+            <p id="welcome " style="color: goldenrod;border-color: lightgray;border:1px; "></p>
+
+            <script>
+                function subscribe() {
+                    var txt = 'label';
+                    confirm('message with the Email: ' + document.getElementById(txt).value + ' was sent.');
+                    document.getElementById("label ").value = " ";
+                }
+            </script>
+            <hr style="border-color: lightgray; ">
+            <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: large; text-align: right; font-weight: bold; color: white; float: right; ">
+                ?צריכים עזרה
+            </h3><br><br>
+            <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: medium; color: cornsilk; float: right; ">
+                0547859418 - בכריה נור
+            </h3><br><br>
+            <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: medium; color: cornsilk; float: right; ">
+                סאהר - 0523501045
+            </h3><br><br>
+            <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: medium; color: cornsilk; float: right; ">
+                מחמד שחאדה - 0524837958
+            </h3><br><br>
+            <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: medium; color: cornsilk; float: right; ">
+                0547859418 - חליל
+            </h3><br><br>
+            <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: medium; color: cornsilk; float: right; ">
+                אחמד חגאגרה - 0523501045
+            </h3><br><br>
+
+
+
+            <hr style="border-color: lightgray; ">
+            <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: small; color: cornsilk; float: left; ">
+                כל הזכויות שמורות.© 2020
+            </h3><br><br>
+
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
